@@ -1,12 +1,8 @@
 import BlogList from "../Components/BlogList";
 import useFetch from '../Hooks/useFetch'
 
-import { useState, useEffect } from "react";
-
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
-
-  const data = useFetch("http://localhost:8000/blogs")
+  const {data, isPending, error} = useFetch("http://localhost:8000/blogs")
 
   return (
     <div className="mx-4 mt-4 lg:mx-auto">
